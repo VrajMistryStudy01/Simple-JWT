@@ -13,13 +13,13 @@ class RegisterView(APIView):
         if serializer.is_valid():
             user = serializer.save()
         
-            refreshToken = RefreshToken.for_user(user)
-            accessToken = str(refreshToken.access_token)
+            # refreshToken = RefreshToken.for_user(user)
+            # accessToken = str(refreshToken.access_token)
 
             return Response(
             {   "email": user.email,
                 'Message':"Creation Success",
-                "User_access_Token" : accessToken
+                # "User_access_Token" : accessToken
             },
             status= status.HTTP_201_CREATED
         )
