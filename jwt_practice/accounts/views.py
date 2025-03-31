@@ -17,7 +17,7 @@ class RegisterView(APIView):
             accessToken = str(refreshToken.access_token)
 
             return Response(
-            {
+            {   "email": user.email,
                 'Message':"Creation Success",
                 "User_access_Token" : accessToken
             },
